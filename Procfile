@@ -1,0 +1,1 @@
+web: gunicorn blend.wsgi --log-file -
