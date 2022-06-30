@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'server',
     'apu',
     'rest_framework',
-    'templated_docs',
     'crispy_forms',
 ]
 

@@ -10,8 +10,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from .cart import Cart
 from .forms import CartAddProductForm
-# from templated_docs import fill_template
-# from templated_docs.http import FileResponse
+
 from docx import Document as Doc
 from django.core.files.base import ContentFile, File
 
