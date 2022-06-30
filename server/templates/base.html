@@ -1,0 +1,226 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Creative Design landing page.">
+    <meta name="author" content="Devcrud">
+    <title>{% block title %}{% endblock %}</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static '/vendors/themify-icons/css/themify-icons.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap + Creative Design main styles -->
+	<link rel="stylesheet" href="{% static '/css/creative-design.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav id="scrollspy" class="navbar page-navbar navbar-light navbar-expand-md fixed-top affix"{% block header %} {% endblock %}>
+        <div class="container">
+            <a class="navbar-brand" href="/"><img style="width: 150px" src="{% static 'imgs/logo.png' %}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Домой</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Видео</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testmonial">Наши клиенты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news' %}">Новости</a>
+                    </li>
+                    <li class="nav-item ml-md-4">
+                        <a class="nav-link btn btn-primary" href="{% url 'product_list' %}">Наши продукты</a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    {% if cart|length > 0 %}
+                    <li class="nav-item ml-md-4">
+                        <a class="nav-link" href="{% url 'cart_detail' %}">Корзина</a>
+                    </li>
+                    {% endif %}
+
+                    {% else %}
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      login
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                      register
+                    </button>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav><!-- End of Page Navbar -->
+
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="{% url 'login' %}" method="post">
+              <div class="mb-3">
+                <label  class="form-label">Email address</label>
+                  {% csrf_token %}
+                  {{ form2.username }}
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                {{ form2.password }}
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ok</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel2">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="{% url 'register' %}" method="post">
+              <div class="mb-3">
+                <label  class="form-label">username</label>
+                  {% csrf_token %}
+                  {{ form3.username }}
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                {{ form3.password }}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password 2</label>
+                {{ form3.password2 }}
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% block content %}
+{% endblock %}
+            <section class="pb-0">
+                    <!-- Container -->
+                    <div class="container">
+                        <!-- Pre footer -->
+                        <div class="pre-footer">
+                            <ul class="list">
+                                <li class="list-head">
+                                    <h6 class="font-weight-bold">О НАС</h6>
+                                </li>
+                                <li class="list-body">
+                                    <p>Компания «Bland group» – единственный в Кыргызстане производитель развивающих детских игровых площадок, уличных тренажеров и элементов спортивных сооружений. </p>
+                                    <a href="#"><strong class="text-primary">Bland</strong> <span class="text-dark">Group</span></a>
+                                </li>
+                            </ul>
+                            <ul class="list">
+                                <li class="list-head">
+                                    <h6 class="font-weight-bold">ПОЛЕЗНЫЕ ССЫЛКИ</h6>
+                                </li>
+                                <li class="list-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            {% if user.is_superuser %}
+                                            <a href="{% url 'orders' %}">Заказы</a>
+                                            <a href="{% url 'product_create' %}">Создать продукт</a>
+                                            <a href="#">Создать новость</a>
+                                            {% else %}
+                                            <a href="#">Link 1</a>
+                                            <a href="#">Link 2</a>
+                                            <a href="#">Link 3</a>
+                                            {% endif %}
+                                            <a href="test">TEST</a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#">Link 5</a>
+                                            <a href="#">Link 6</a>
+                                            <a href="#">Link 7</a>
+                                            <a href="#">Link 8</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list">
+                                <li class="list-head">
+                                    <h6 class="font-weight-bold">Контакты</h6>
+                                </li>
+                                <li class="list-body">
+                                    <p>Наш адрес и номер телефона</p>
+                                    <p><i class="ti-location-pin"></i>г.Бишкек, БЦ Монолит ул. Льва Толстого, 36к/1 каб 603</p>
+                                    <p><i class="ti-location-pin"></i>+996 558 602 334</p>
+                                    <p><i class="ti-email"></i>  info@website.com</p>
+                                    <div class="social-links">
+                                        <a href="https://www.facebook.com/blandgroupkg/" class="link"><i class="ti-facebook"></i></a>
+                                        <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                                        <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                                        <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                                        <a href="https://www.instagram.com/blandgroup/" class="link"><i class="ti-instagram"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div><!-- End of Pre footer -->
+                    </div>
+                </section>
+            <!-- foooter -->
+            <footer class="footer">
+                <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="/">Bland Group</a></p>
+            </footer><!-- End of Footer-->
+
+        </div><!--End of Container -->
+    </section><!-- End of Section -->
+
+    <!-- core  -->
+    <script src="{% static '/vendors/jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static '/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+    <!-- bootstrap affix -->
+    <script src="{% static '/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Creative Design js -->
+    <script src="{% static '/js/creative-design.js' %}"></script>
+
+</body>
+</html>

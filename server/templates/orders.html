@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Заказы
+{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container p-3">
+<table class="table">
+         <thead>
+            <tr>
+               <th scope="col">#</th>
+               <th scope="col">Имя</th>
+               <th scope="col">Почта</th>
+               <th scope="col">Номер телефона</th>
+               <th scope="col">Описание</th>
+               <th scope="col">Дата</th>
+            </tr>
+         </thead>
+         <tbody>
+         {% for i in orders %}
+            <tr>
+
+               <th scope="row">{{ i.id }}</th>
+               <td>{{ i.name }}</td>
+               <td>{{ i.email }}</td>
+               <td>{{ i.phone }}</td>
+               <td>{{ i.text }}</td>
+               <td>{{ i.date }}</td>
+
+            </tr>
+         {% endfor %}
+         </tbody>
+      </table>
+
+</div>
+{% endblock %}

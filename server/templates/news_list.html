@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Новости
+{% endblock %}
+{% block content %}
+{% for i in news %}
+    <!-- Section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="{{ i.image.url }}" class="w-100" alt="About us">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">{{ i.title }}</h6>
+
+                    <p>{{ i.description }}</p>
+                    <p>{{ i.date }}</p>
+                    <button class="btn btn-outline-primary btn-sm">Подробнее</button>
+                </div>
+            </div><!-- End of Row -->
+        </div><!-- End of Container-->
+    </section><!-- End of Section -->
+{% endfor %}
+{% endblock %}

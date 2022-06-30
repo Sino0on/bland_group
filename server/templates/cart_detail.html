@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Заказы
+{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container p-3">
+<table class="table">
+         <thead>
+            <tr>
+               <th scope="col">#</th>
+               <th scope="col">Название</th>
+               <th scope="col">Мини Название</th>
+               <th scope="col">Категория</th>
+               <th scope="col">Колличество</th>
+               <th scope="col">Цена</th>
+            </tr>
+         </thead>
+         <tbody>
+         {% for i in cart %}
+            <tr>
+
+               <th scope="row"></th>
+               <td>{{ i.product }}</td>
+               <td>{{ i.product.mini_title }}</td>
+               <td>{{ i.product.category }}</td>
+               <td>{{ i.quantity }}</td>
+               <td>{{ i.total_price }}</td>
+
+            </tr>
+         {% endfor %}
+         <tr>
+
+               <th scope="row"></th>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td><h3>{{ cart.get_total_price }}</h3></td>
+
+            </tr>
+
+         </tbody>
+      </table>
+    <p>
+        <div class="container">
+  <a class="btn btn-primary m-3" style="color: black, justify-content: center" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Заказать
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class=" card-body">
+      <div class="container">
+          <div class="row align-items-start">
+            <div class="col">
+                <a class="m-5 " href="{% url 'orderfiz' %}">Заказать</a> Физическое лицо
+            </div>
+
+              <!-- Button trigger modal -->
+              <div class="col">
+                <a href="" class="m-5" data-bs-toggle="modal" data-bs-target="#exampleModal"> Заказать </a>    Юридическое лицо
+              </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Внимание для юридеческих лиц 16% ндс
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <a href="{% url 'orderur' %}" class="btn btn-primary">Согласен</a>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+      </div>
+  </div>
+</div>
+    </div>
+</div>
+{% endblock %}
+
+

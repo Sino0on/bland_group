@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Главная
+{% endblock %}
+{% block header %}
+ data-spy="affix" data-offset-top="20"
+{% endblock %}
+{% block content %}
+    <!-- Page Header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <p>Строительная компания</p>
+            <h6>Bland Group</h6>
+            <a class="btn btn-outline-light " href="{% url 'product_list' %}">Наши продукты</a>
+        </div>      
+    </header><!-- End of Page Header -->    
+    
+    <!-- About Section -->
+    <section id="about">
+        <!-- Container -->
+        <div class="container">
+            <!-- About wrapper -->
+            <div class="about-wrapper">
+                <div class="after"><h1>О нас</h1></div>
+                <div class="content">
+                    <h5 class="title mb-3">Bland Group</h5>
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col">
+                            <p><b>Более 1000 счастливых детей!</b></p>
+
+                            <p>Компания «Bland group» – единственный в Кыргызстане производитель развивающих детских игровых площадок, уличных тренажеров и элементов спортивных сооружений. Собственное производство, которое отвечает всем современным требованиям, гарантирует, что компания в силах исполнить заказ любой сложности. Но главный принцип компании был и остается – качество и безопасность!
+
+В отличии от импортной продукции, компания «Bland group» предоставляет гарантию на все свои изделия, и на дальнейшее её обслуживание. Качество продукции нашей компании в сравнении с импортными производителями – выше, а цена, за счет собственного производства ниже!</p>
+                        </div>
+                        <div class="col">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda soluta nisi cumque nostrum porro repellat iusto neque quos asperiores, aliquam.</p>
+                            <p>Воспользовавшись нашими услугами, Вы сможете в короткие сроки до 7 дней приобрести качественную и экологическую продукцию. Мы доставим и установим максимально быстро, поскольку все изделия и комплектующие имеются у нас в наличии.</p>
+                        </div>
+                    </div><!-- End of Row -->                   
+                    <a href="javascript:void(0)">Read More...</a>
+                </div>
+            </div><!-- End of About Wrapper -->         
+        </div>  <!-- End of Container-->        
+     </section><!--End of Section -->
+
+
+    <!-- section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                            <model-viewer alt="dastan" src="{% static 'js/Gorka3.gltf' %}" camera-controls ar ios-src="files/CC0_-_Toilet_Paper_Roll.usdz" camera-orbit="20deg 80deg 10m"></model-viewer>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">Lorem ipsum dolor sit amet, consectetur.</h6>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae autem rem impedit molestiae hic ducimus, consequuntur ullam dolorem quaerat beatae labore explicabo, sint laboriosam aperiam nihil inventore facilis. Quasi, facilis.</p>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                </div>
+            </div>
+            <!-- End of Row -->
+        </div>  
+        <!-- End of Container -->
+    </section><!-- End of Section -->   
+
+    <!-- section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">                
+                <div class="col-md-5">
+                    <h6 class="title mb-3">Lorem ipsum dolor sit amet, consectetur.</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae autem rem impedit molestiae hic ducimus, consequuntur ullam dolorem quaerat beatae labore explicabo, sint laboriosam aperiam nihil inventore facilis. Quasi, facilis.</p>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after right"></div>
+                        <img src="{% static '/imgs/game2.jpg' %}" class="w-100" alt="About Us">
+                    </div>                      
+                </div>
+            </div><!-- End of Row -->           
+        </div><!-- End of Container-->      
+    </section><!-- End of Section -->
+    
+<!--    &lt;!&ndash; Testmonial Section &ndash;&gt;-->
+<!--    <section class="text-center pt-5" id="testmonial2">-->
+<!--        &lt;!&ndash; Container &ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            <h3 class="mt-3 mb-5 pb-5">Наши клиенты</h3>-->
+<!--            &lt;!&ndash; Row &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--                <div class="col-sm-10 col-md-4 m-auto">-->
+<!--                    <div class="testmonial-wrapper">-->
+<!--                        <img src="{% static '/imgs/imarat.jpg' %}" alt="Client Image">-->
+<!--                        <h6 class="title mb-3">Имарат</h6>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-10 col-md-4 m-auto">-->
+<!--                    <div class="testmonial-wrapper">-->
+<!--                        <img src="{% static '/imgs/elite-house-logo.png' %}" alt="Client Image">-->
+<!--                        <h6 class="title mb-3">Элит Хаус</h6>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-10 col-md-4 m-auto">-->
+<!--                    <div class="testmonial-wrapper">-->
+<!--                        <img src="{% static '/imgs/progroup.png' %}" alt="Client Image">-->
+<!--                        <h6 class="title mb-3">Прогруп</h6>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-10 col-md-4 m-auto">-->
+<!--                    <div class="testmonial-wrapper">-->
+<!--                        <img src="{% static '/imgs/zalkar.jpg' %}" alt="Client Image">-->
+<!--                        <h6 class="title mb-3">Залкар Строй инжиниринг</h6>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-10 col-md-4 m-auto">-->
+<!--                    <div class="testmonial-wrapper">-->
+<!--                        <img src="{% static '/imgs/cap.jpg' %}" alt="Client Image">-->
+<!--                        <h6 class="title mb-3">КапСтрой</h6>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; end of Row &ndash;&gt;-->
+<!--        </div>&lt;!&ndash; End of Cotanier &ndash;&gt;-->
+<!--    </section>&lt;!&ndash; End of Testmonial Section &ndash;&gt;-->
+
+    <!-- Features Section -->
+    <section class="has-bg-img" id="features">
+        <div class="overlay"></div>
+        <!-- Button trigger modal -->
+        <a data-toggle="modal" href="#exampleModalCenter">
+            <i></i>
+        </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                     <iframe width="100%" height="450px" class="border-0" 
+                    src="https://blandgroup.kg/wp-content/uploads/2020/09/blandgroup_120243477_788073878624770_4211538146444678255_n.mp4?_=2">
+                    </iframe>
+                </div>
+            </div>
+        </div><!-- End of Modal -->     
+    </section><!-- End of features Section -->  
+
+    <!-- Section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="{% static '/imgs/game.png' %}" class="w-100" alt="About us">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">Отечественный производитель</h6>
+
+                    <p>Мы производим увлекательные, качественные и самое главное безопасные детские площадки. Мы воплощаем в жизнь детские мечты. Каждый ребенок мечтает играть на таких площадках, которые будут ему интересны, которые своими красками привлекают внимание, вызывают доверие и восторг.</p>
+                    <p>Мы гарантируем индивидуальный подход к каждому клиенту. Наши условия обслуживания и цены Вас приятно удивят. Свяжитесь с нами, и мы поможем спроектировать Вашу детскую площадку.</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                </div>
+            </div><!-- End of Row -->           
+        </div><!-- End of Container-->      
+    </section><!-- End of Section -->   
+
+    <!-- Testmonial Section -->
+    <section class="text-center pt-5" id="testmonial">
+        <!-- Container -->
+        <div class="container">
+            <h3 class="mt-3 mb-5 pb-5">Наши клиенты</h3>
+            <!-- Row -->
+            <div class="row">
+                <div class="col-sm-10 col-md-4 m-auto">
+                    <div class="testmonial-wrapper">
+                        <img src="{% static '/imgs/imarat.jpg' %}" alt="Client Image">
+                        <h6 class="title mb-3">Имарат</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-4 m-auto">
+                    <div class="testmonial-wrapper">
+                        <img src="{% static '/imgs/elite-house-logo.png' %}" alt="Client Image">
+                        <h6 class="title mb-3">Элит Хаус</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-4 m-auto">
+                    <div class="testmonial-wrapper">
+                        <img src="{% static '/imgs/progroup.png' %}" alt="Client Image">
+                        <h6 class="title mb-3">Прогруп</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-4 m-auto">
+                    <div class="testmonial-wrapper">
+                        <img src="{% static '/imgs/zalkar.jpg' %}" alt="Client Image">
+                        <h6 class="title mb-3">Залкар Строй инжиниринг</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-md-4 m-auto">
+                    <div class="testmonial-wrapper">
+                        <img src="{% static '/imgs/cap.jpg' %}" alt="Client Image">
+                        <h6 class="title mb-3">КапСтрой</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptates voluptatem eum nisi cumque veniam est id reprehenderit atque rerum, cum sit perspiciatis, harum cupiditate nostrum quibusdam perferendis accusamus, illo.</p>
+                    </div>
+                </div>
+            </div><!-- end of Row -->           
+        </div><!-- End of Cotanier -->  
+    </section><!-- End of Testmonial Section -->
+
+    <!-- Section -->
+    <section class="has-bg-img text-center text-light height-auto" style="background-image: url({% static '/imgs/5-scaled.jpg' %})">
+        <h1 class="display-4">LET’S TALK BUSINESS.</h1>
+    </section><!-- End of Section -->
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="text-center">
+        <!-- container -->
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <p class="mb-5">Дети достойны лучших игровых площадок. Напишите нам по WhatsApp или позвонив по +996 558 602 334, <br>
+             и мы с радостью проконсультируем Вас! К каждому клиенту относимся индивидуально!</p>
+            
+            <!-- Contact form -->
+            <form class="contact-form col-md-11 col-lg-9 mx-auto" method=POST action="">
+                <div class="form-row">
+                    <div class="col form-group">
+                        {% csrf_token %}
+                        {{ form.name }}
+                    </div>
+                    <div class="col form-group">
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.text }}
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+                </div>
+            </form><!-- End of Contact form -->         
+        </div><!-- End of Container-->      
+    </section><!-- End of Contact Section -->   
+
+    <!-- Section -->
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Главная
+{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<section id="contact" class="text-center">
+        <!-- container -->
+        <div class="container">
+            <form action="" method=POST enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="col form-group">
+                        {% csrf_token %}
+                        {{ from.as_p }}
+
+                        <button type="submit" value="submit" class="btn btn-primary">Готово</button>
+                    </div>
+            </form>
+        </div>
+</section>
+{% endblock %}
