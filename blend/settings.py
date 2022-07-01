@@ -83,8 +83,12 @@ TEMPLATED_DOCS_LIBREOFFICE_PATH = '/usr/share/libreoffice/program'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dfnqakfknd0a04',
+        'USER': 'ugqbuvtbwcbwic',
+        'PASSWORD': '16485096af11e91bdec5dd797f5cfa0250ad13ef5b1650900ca7b7fda777a4ff',
+        'HOST': 'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
