@@ -37,3 +37,4 @@ six==1.16.0
 sqlparse==0.4.2
 urllib3==1.26.9
 yarl==1.7.2
+psycopg2==2.9.3
