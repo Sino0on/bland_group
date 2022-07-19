@@ -200,10 +200,9 @@
                                             <a href="test">TEST</a>
                                         </div>
                                         <div class="col">
-                                            <a href="#">Link 5</a>
-                                            <a href="#">Link 6</a>
-                                            <a href="#">Link 7</a>
-                                            <a href="#">Link 8</a>
+                                            {% for i in categories %}
+                                            <a href="{% url 'product_list' %}?category={{ i.id }}">{{ i.title }}</a>
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </li>
