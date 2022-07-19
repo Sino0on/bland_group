@@ -4,6 +4,7 @@ from .models import *
 admin.site.register(Product)
 admin.site.register(Image_product)
 admin.site.register(Category)
+admin.site.register(Subcategory)
 admin.site.register(Work)
 admin.site.register(Image_work)
 admin.site.register(News)

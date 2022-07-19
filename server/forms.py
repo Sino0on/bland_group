@@ -105,3 +105,12 @@ class OrderFizCreateForm(forms.ModelForm):
             'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Город'}),
             'delivery': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
+
+
+class ProductFilterForm(forms.Form):
+
+    class Meta:
+        fields = '__all__'
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Title'})
+        }

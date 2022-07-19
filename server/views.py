@@ -3,6 +3,8 @@ import time
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
+
+from .filters import ProductFilter
 from .models import *
 from .forms import *
 import requests
@@ -95,13 +97,16 @@ def index(request):
             form = form
     else:
         form = FeedbackCreateForm
+    categories = Category.objects.all()
     form2 = AuthenticationForm
-    return render(request, 'index.html', {'form': form, 'form2': form2, 'cart': Cart(request)})
+    return render(request, 'index.html', {'form': form, 'form2': form2, 'cart': Cart(request), 'categories': categories, 'subcategories': Subcategory.objects.all()})
 
 
 def product_list(request):
     products = Product.objects.all()
-    return render(request, 'products.html', {'products': products, 'cart_product_form': CartAddProductForm})
+    filter = ProductFilter(request.GET, queryset=products)
+    products = filter.qs
+    return render(request, 'products.html', {'products': products, 'cart_product_form': CartAddProductForm, 'productfilter': filter})
 
 
 def postdelete(request, id):
@@ -143,38 +148,9 @@ def product_create(request):
     return render(request, 'product_create.html', {'from': form, 'cart': Cart(request)})
 
 
-# def product_detail(request, pk):
-#     if request.method == 'POST':
-#         print('post')
-#         form = OrderCreateForm(request.POST)
-#         if form.is_valid():
-#             print('valid')
-#
-#             das = form.save(commit=False)
-#             product2 = Product.objects.get(id=pk)
-#             das.product = product2
-#             das.save()
-#             product = Product.objects.get(id=pk)
-#             payload = {
-#                 "text": f"Новый Заказ\n\nЗаказ номер - {das.id}\nИмя - {das.name}\nОписание - {das.text}\nПродукт - {product.title}",
-#                 "chat_id": '795677145',
-#             }
-#             response = requests.post(
-#                 'https://api.telegram.org/bot5324134927:AAEecQYFSOAnpX--_awWaACuUQxGofyrk2w/sendMessage', json=payload)
-#             print('ok')
-#             return redirect('/')
-#         else:
-#             form = form
-#     else:
-#         form = OrderCreateForm
-#     return render(
-#         request, 'product_detail.html',
-#         {
-#             'product': Product.objects.get(id=pk),
-#          'images': Image_product.objects.filter(product=pk),
-#             'form': form
-#         }
-#     )
+def product_detail(request, pk):
+    product = Product.objects.get(id=pk)
+    return render(request, 'product_detail.html', {'product': product})
 
 
 def components(request):

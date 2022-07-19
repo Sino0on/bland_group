@@ -5,42 +5,127 @@
 {% endblock %}
 {% block content %}
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
 
 
-    {% for i in products %}
-    <section>
-        <!-- Container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-6">
+<!--    {% for i in products %}-->
+<!--    <section>-->
+<!--        &lt;!&ndash; Container &ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            &lt;!&ndash; row &ndash;&gt;-->
+<!--            <div class="row justify-content-between align-items-center">-->
+<!--                <div class="col-md-6">-->
+<!--                    <div class="img-wrapper">-->
+<!--                        <div class="after"></div>-->
+<!--                            <model-viewer alt="dastan" src="{{ i.gLTF.url }}" ar camera-controls skybox-image="{% static 'hdr_game.hdr' %}" camera-orbit="20deg 80deg 10m"></model-viewer>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-5">-->
+<!--                    <h6 class="title mb-3">{{ i.title }}</h6>-->
+<!--                    <p class="text-muted">{{ i.mini_title }}</p>-->
+<!--                    <p>{{ i.description }}</p>-->
+
+<!--                    <form action="{% url 'cart_add' i.id %}" method="POST">-->
+<!--                        {{ cart_product_form }}-->
+<!--                        {% csrf_token %}-->
+<!--                        <button class="btn btn-outline-primary btn-sm">Добавить в корзину</button>-->
+<!--                    </form>-->
+<!--&lt;!&ndash;                    <a href="{% url 'delete' i.id %}" class="btn btn-outline-warning btn-sm">Удалить</a>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; End of Row &ndash;&gt;-->
+<!--        </div>-->
+<!--        &lt;!&ndash; End of Container &ndash;&gt;-->
+<!--    </section>&lt;!&ndash; End of Section &ndash;&gt;-->
+<!--<div class="contaner p-3"></div>-->
+<!--    {% endfor %}-->
+
+
+
+
+<div class="container p-1">
+
+
+<form class="row g-3">
+  <div class="col-auto">
+    <h5>Название</h5>
+    {{ productfilter.form.title }}
+  </div>
+  <div class="col-auto">
+    <h5>Категория</h5>
+    {{ productfilter.form.category }}
+  </div>
+  <div class="col-auto">
+    <h5>Подкатегория</h5>
+    {{ productfilter.form.subcategory }}
+  </div>
+  <div class="col-auto">
+    <h5>Обозначение</h5>
+    {{ productfilter.form.mini_title }}
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Поиск</button>
+  </div>
+</form>
+    <br>
+    <br>
+    <br>
+
+
+<table class="table">
+         <thead>
+            <tr>
+               <th scope="col">Изображения</th>
+               <th scope="col">Название</th>
+               <th scope="col">Обозначение</th>
+               <th scope="col">Категория</th>
+               <th scope="col">Габариты</th>
+               <th scope="col">Возрастное ограничение</th>
+               <th scope="col">|</th>
+            </tr>
+         </thead>
+         <tbody>
+         {% for i in products %}
+            <tr>
+
+               <th scope="row"><div class="col-md-10">
                     <div class="img-wrapper">
-                        <div class="after"></div>
-                            <model-viewer alt="dastan" src="{{ i.gLTF.url }}" ar camera-controls skybox-image="{% static 'hdr_game.hdr' %}" camera-orbit="20deg 80deg 10m"></model-viewer>
+                        <div class="after" style="width: 40px"></div>
+                        <img src="{{ i.image.url }}" class="w-100" alt="About us">
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <h6 class="title mb-3">{{ i.title }}</h6>
-                    <p class="text-muted">{{ i.mini_title }}</p>
-                    <p>{{ i.description }}</p>
+               </th>
+               <td style='padding-top: 50px'><a style="color: black" href="{% url 'product_detail' i.pk %}">{{ i.title }}</a></td>
+               <td style="padding-top: 50px"><a style="color: black" href="{% url 'product_detail' i.pk %}">{{ i.mini_title }}</a></td>
+               <td style="padding-top: 50px"><a style="color: black" href="{% url 'product_detail' i.pk %}">{{ i.category }}</a></td>
+               <td style="padding-top: 50px"><a style="color: black" href="{% url 'product_detail' i.pk %}">{{ i.height }}x{{ i.width }}x{{ i.length }}</a></td>
+               <td style="padding-top: 50px"><a style="color: black" href="{% url 'product_detail' i.pk %}">{{ i.age_limit }}+</a></td>
+               <td style="padding-top: 50px"><a class="btn btn-outline-primary" href="{% url 'product_detail' i.pk %}">Подробнее</a></td>
 
-                    <form action="{% url 'cart_add' i.id %}" method="POST">
-                        {{ cart_product_form }}
-                        {% csrf_token %}
-                        <button class="btn btn-outline-primary btn-sm">Добавить в корзину</button>
-                    </form>
-<!--                    <a href="{% url 'delete' i.id %}" class="btn btn-outline-warning btn-sm">Удалить</a>-->
-                </div>
-            </div>
-            <!-- End of Row -->
-        </div>
-        <!-- End of Container -->
-    </section><!-- End of Section -->
-<div class="contaner p-3"></div>
-    {% endfor %}
+            </tr>
+         {% endfor %}
+         <tr>
+
+               <th scope="row"></th>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+
+            </tr>
+
+         </tbody>
+      </table>
+
+
 
 
 

@@ -15,6 +15,18 @@ class Category(models.Model):
         verbose_name_plural = 'Категории'
 
 
+class Subcategory(models.Model):
+    title = models.CharField(max_length=100)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'Подкатегория'
+        verbose_name_plural = 'Подкатегории'
+
+
 class Product(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -26,7 +38,10 @@ class Product(models.Model):
     mini_title = models.CharField(max_length=255)
     material = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, blank=True, null=True)
     price = models.IntegerField()
+    age_limit = models.IntegerField()
+    image = models.ImageField(upload_to='images/product')
 
     def __str__(self):
         return f'{self.title}'

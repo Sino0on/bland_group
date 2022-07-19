@@ -12,13 +12,20 @@
                 <div class="col-md-6">
                     <div class="img-wrapper">
                         <div class="after"></div>
-                            <model-viewer alt="dastan" src="{{ product.gLTF.url }}" ar ios-src="{{ product.gLTF.url }}" camera-controls camera-orbit="200deg 70deg 20m"></model-viewer>
+                            <model-viewer style="background: #fff"   alt="dastan" src="{{ product.gLTF.url }}" ar ios-src="{{ product.gLTF.url }}" camera-controls camera-orbit="200deg 70deg 20m"></model-viewer>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <h6 class="title mb-3">{{ product.title }}</h6>
                     <p class="text-muted">{{ product.mini_title }}</p>
-                    <p>{{ product.description }}</p>
+                    <h7>Высота: {{ product.height }}</h7>
+                    <p></p>
+                    <h7>Ширина: {{ product.width }}</h7>
+                    <p></p>
+                    <h7>Длина: {{ product.length }}</h7>
+                    <p></p>
+                    <h4>Цена: {{ product.price }}</h4>
+
                 </div>
             </div>
             <!-- End of Row -->
@@ -35,42 +42,7 @@
                 <div class="col-md-5">
                     <table class="table table-borderless v-align-center">
          <tbody>
-            <tr>
-               <td>
-                  <span class="h6">Название:</span>
-               </td>
-               <td class="w-75"><p>{{ product.title }}</p></td>
-            </tr>
-            <tr>
-               <td>
-                  <span class="h6">Название:</span>
-               </td>
-               <td><p>{{ product.mini_title }}</p></td>
-            </tr>
-            <tr>
-               <td>
-                  <span class="h6">Высота:</span>
-               </td>
-               <td><p>{{ product.height }}</p></td>
-            </tr>
-            <tr>
-               <td>
-                  <span class="h6">Ширина:</span>
-               </td>
-               <td><p>{{ product.width }}</p></td>
-            </tr>
-            <tr>
-               <td>
-                  <span class="h6">Длина:</span>
-               </td>
-               <td><p>{{ product.length }}</p></td>
-            </tr>
-            <tr>
-               <td>
-                  <span class="h6">Материал:</span>
-               </td>
-               <td><p>{{ product.material }}</p></td>
-            </tr>
+
 
          </tbody>
       </table>
@@ -113,37 +85,39 @@
             </div><!-- End of Row -->
         </div><!-- End of Container-->
     </section><!-- End of Section -->
-<section id="contact" class="text-center">
-        <!-- container -->
-        <div class="container">
-            <h1>Заказать этот продукт</h1>
-            <p class="mb-5">Дети достойны лучших игровых площадок. Напишите нам по WhatsApp или позвонив по +996 558 602 334, <br>
-             и мы с радостью проконсультируем Вас! К каждому клиенту относимся индивидуально!</p>
+<!--<section id="contact" class="text-center">-->
+<!--        &lt;!&ndash; container &ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            <h1>Заказать этот продукт</h1>-->
+<!--            <p class="mb-5">Дети достойны лучших игровых площадок. Напишите нам по WhatsApp или позвонив по +996 558 602 334, <br>-->
+<!--             и мы с радостью проконсультируем Вас! К каждому клиенту относимся индивидуально!</p>-->
 
-            <!-- Contact form -->
-            <form class="contact-form col-md-11 col-lg-9 mx-auto" method=POST action="">
-                <div class="form-row">
-                    <div class="col form-group">
-                        {% csrf_token %}
-                        {{ form.name }}
-                    </div>
-                    <div class="col form-group">
-                        {{ form.email }}
-                    </div>
-                </div>
-                <div class="col form-group">
-                        {{ form.phone }}
-                </div>
-                <div class="col form-group">
-                    {{ form.text }}
-                </div>
-                <div class="col form-group">
-                    {{ form.grunt }}
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-block" value="Заказать">
-                </div>
-            </form><!-- End of Contact form -->
-        </div><!-- End of Container-->
-    </section><!-- End of Contact Section -->
+<!--            &lt;!&ndash; Contact form &ndash;&gt;-->
+<!--            <form class="contact-form col-md-11 col-lg-9 mx-auto" method=POST action="">-->
+<!--                <div class="form-row">-->
+<!--                    <div class="col form-group">-->
+<!--                        {% csrf_token %}-->
+<!--                        {{ form.name }}-->
+<!--                    </div>-->
+<!--                    <div class="col form-group">-->
+<!--                        {{ form.email }}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col form-group">-->
+<!--                        {{ form.phone }}-->
+<!--                </div>-->
+<!--                <div class="col form-group">-->
+<!--                    {{ form.text }}-->
+<!--                </div>-->
+<!--                <div class="col form-group">-->
+<!--                    {{ form.grunt }}-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <input type="submit" class="btn btn-primary btn-block" value="Заказать">-->
+<!--                </div>-->
+<!--            </form>&lt;!&ndash; End of Contact form &ndash;&gt;-->
+<!--        </div>&lt;!&ndash; End of Container&ndash;&gt;-->
+<!--    </section>&lt;!&ndash; End of Contact Section &ndash;&gt;-->
+
+
 {% endblock %}

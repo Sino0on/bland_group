@@ -9,7 +9,7 @@ urlpatterns = [
     path('delete/<int:id>', postdelete, name='delete'),
     path('news', news_list, name='news'),
     path('product_create', product_create, name='product_create'),
-    # path('product_detail/<int:pk>', product_detail, name='product_detail'),
+    path('product_detail/<int:pk>', product_detail, name='product_detail'),
     path('components', components),
     path('orders', orders, name='orders'),
     path('test', test),
