@@ -99,14 +99,14 @@ def index(request):
         form = FeedbackCreateForm
     categories = Category.objects.all()
     form2 = AuthenticationForm
-    return render(request, 'index.html', {'form': form, 'form2': form2, 'cart': Cart(request), 'categories': categories, 'subcategories': Subcategory.objects.all()})
+    return render(request, 'index.html', {'form': form, 'form2': form2, 'cart': Cart(request), 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
 
 
 def product_list(request):
     products = Product.objects.all()
     filter = ProductFilter(request.GET, queryset=products)
     products = filter.qs
-    return render(request, 'products.html', {'products': products, 'cart_product_form': CartAddProductForm, 'productfilter': filter})
+    return render(request, 'products.html', {'products': products, 'cart_product_form': CartAddProductForm, 'productfilter': filter, 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
 
 
 def postdelete(request, id):
@@ -117,7 +117,7 @@ def postdelete(request, id):
 
 def news_list(request):
     news = News.objects.all()
-    return render(request, 'news_list.html', {'news': news, 'cart': Cart(request)})
+    return render(request, 'news_list.html', {'news': news, 'cart': Cart(request), 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
 
 
 def product_create(request):
@@ -145,12 +145,12 @@ def product_create(request):
             form = form
     else:
         form = ProductForm
-    return render(request, 'product_create.html', {'from': form, 'cart': Cart(request)})
+    return render(request, 'product_create.html', {'from': form, 'cart': Cart(request), 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
 
 
 def product_detail(request, pk):
     product = Product.objects.get(id=pk)
-    return render(request, 'product_detail.html', {'product': product})
+    return render(request, 'product_detail.html', {'product': product, 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
 
 
 def components(request):
@@ -248,10 +248,10 @@ def orderfiz_create(request):
             return redirect('/')
         else:
             print(form.errors)
-            return render(request, 'order_create_fiz.html', {'cart': Cart(request), 'form': form})
+            return render(request, 'order_create_fiz.html', {'cart': Cart(request), 'form': form, 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
     else:
         form = OrderFizCreateForm()
-    return render(request, 'order_create_fiz.html', {'cart': Cart(request), 'form': form})
+    return render(request, 'order_create_fiz.html', {'cart': Cart(request), 'form': form, 'categories': Category.objects.all(), 'subcategories': Subcategory.objects.all()})
 
 
 def orderur_create(request):
