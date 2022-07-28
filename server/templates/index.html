@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
     <!-- Page Header -->
-    <header id="home" class="header">
+<header id="home" class="header" xmlns="http://www.w3.org/1999/html">
         <div class="overlay"></div>
         <div class="header-content">
             <p>Строительная компания</p>
@@ -46,6 +46,9 @@
         </div>  <!-- End of Container-->        
      </section><!--End of Section -->
 
+<br>
+<br>
+<br>
 
     <!-- section -->
     <section>
@@ -56,7 +59,7 @@
                 <div class="col-md-6">
                     <div class="img-wrapper">
                         <div class="after"></div>
-                            <model-viewer style="background: #fff" alt="dastan" src="{% static 'js/ploshadka.gltf' %}" camera-controls ar ios-src="files/CC0_-_Toilet_Paper_Roll.usdz" camera-orbit="140deg 70deg 15m"></model-viewer>
+                            <model-viewer class="w-100" style="background: #fff" alt="dastan" src="{% static 'js/ploshadka.gltf' %}" camera-controls ar ios-src="files/CC0_-_Toilet_Paper_Roll.usdz" camera-orbit="140deg 70deg 15m"></model-viewer>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -102,44 +105,149 @@
 <!--    <div class="carousel-item active">-->
 
 <!--     section -->
-    <section>
+<!--    <section>-->
 
-        <!-- Container -->
-        <div class="container">
-            <div class="accordion">
-            <!-- Row -->
+<!--        &lt;!&ndash; Container &ndash;&gt;-->
+<!--        <div class="container">-->
+<!--            <div class="accordion">-->
+<!--            &lt;!&ndash; Row &ndash;&gt;-->
+<!--            <div class="row justify-content-between align-items-center">-->
+<!--                <div class="col-md-3">-->
+<!--                    <p>-->
+<!--                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Детские площадки</button>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">Воркауты</button-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">Водоналивные блоки</button>-->
+<!--                    </p>-->
+
+<!--                </div>-->
+<!--                <div class="col-md-3">-->
+
+<!--                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">-->
+<!--                            <h6 class="title mb-3">Детские площадки</h6>-->
+<!--                            <p>Пластик – безопасный и достойный вариант. </p>-->
+<!--                            <p>✔ никаких заноз, повреждений и острых углов</p>-->
+<!--                            <p>✔ современность</p>-->
+<!--                            <p>✔ яркость</p>-->
+<!--                            <p>✔ несложная сборная конструкция</p>-->
+<!--                            <button class="btn btn-outline-primary btn-sm">Learn More</button>-->
+<!--                        </div>-->
+
+
+
+<!--                    <br>-->
+<!--                    <br>-->
+
+<!--                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">-->
+<!--                                <h6 class="title mb-3">Спортивные площадки, оборудование для воркаут, уличные тренажёры</h6>-->
+<!--                                <p>- ВОЗМОЖНОСТЬ СТРОИТЬ ЦЕЛЫЙ ГОРОД-КОМПЛЕКС-->
+<!--                                <p>- СТОЙКАЯ ПОРОШКОВАЯ ОКРАСКА</p>-->
+<!--                                <p>- ПОЛНЫЙ КОНТРОЛЬ ПРОИЗВОДСТВА</p>-->
+<!--                                <p>- НИЗКАЯ СТОИМОСТЬ ДОСТАВКИ</p>-->
+<!--                                <p>- ВЫИГРЫШНЫЕ ЦЕНЫ, ТОВАР ОТ ПРОИЗВОДИТЕЛЯ - РЕГУЛИРОВКА ПЕРЕКЛАДИН ПО ВЫСОТЕ</p>-->
+
+<!--                                <button class="btn btn-outline-primary btn-sm">Learn More</button>-->
+<!--                            </div>-->
+<!--                    <br>-->
+<!--                    <br>-->
+<!--                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">-->
+<!--                                <h6 class="title mb-3">Водоналивные блоки(барьеры) из пластика</h6>-->
+<!--                                <p> Разновидность дорожного ограждения для ограничения доступа к территории и направления потока автотранспорта. Представляет собой полую обтекаемую конструкцию, выполняется в контрастных красных и белых цветах. Изготавливается из полиэтилена методом ротационной формовки.-->
+<!--                                В процессе эксплуатации наполняется водой, что повышает вес изделия и его устойчивость соответственно.-->
+<!--                                </p>-->
+<!--            &lt;!&ndash;                    <p class="text-muted"> Включает в себя выполнение различных упражнений на уличных спортплощадках, а именно на турниках, брусьях, шведских стенках, рукоходах и прочих конструкциях, или вообще без их использования (на земле). Основной акцент делается на работу с собственным весом и развитие силы и выносливости. Люди, увлекающиеся таким спортом, называют себя по-разному: воркаутеры, уличные (дворовые) спортсмены или атлеты, уличные гимнасты, турникмены и т.д.</p>&ndash;&gt;-->
+<!--                                <button class="btn btn-outline-primary btn-sm">Learn More</button>-->
+
+<!--                            </div>-->
+
+<!--                </div>-->
+<!--                <div class="col-md-5">-->
+<!--                    <div class="img-wrapper">-->
+
+
+<!--                            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion" data-bs-toggle="collapse">-->
+<!--                                <div class="after right"></div>-->
+<!--                                <img src="{% static '/imgs/game2.jpg' %}" class="w-100" alt="About Us">-->
+<!--                            </div>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion" data-bs-toggle="collapse">-->
+<!--                                <div class="after right"></div>-->
+<!--                                <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">-->
+<!--                            </div>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                            <div id="collapseThree" class="collapse" data-bs-parent="#accordion" data-bs-toggle="collapse">-->
+<!--                                <div class="after right"></div>-->
+<!--                                <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">-->
+<!--                            </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; End of Row &ndash;&gt;-->
+<!--        </div>&lt;!&ndash; End of Container&ndash;&gt;-->
+<!--        </div>-->
+<!--    </section>&lt;!&ndash; End of Section &ndash;&gt;-->
+
+
+<section>
+    <!-- Container -->
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    Accordion Item #1
+    </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+    <div class="container">
+            <!-- row -->
             <div class="row justify-content-between align-items-center">
-                <div class="col-md-3">
-                    <p>
-                        <a class="btn" data-bs-toggle="collapse" href="#collapseOne">Детские площадки</a>
-                        <br>
-                        <br>
-                      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">Воркауты</a>
-                        <br>
-                        <br>
-                      <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">Водоналивные блоки</a>
-                    </p>
-
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                            <img src="{% static '/imgs/game2.jpg' %}" class="w-100" alt="About Us">
+                    </div>
                 </div>
-                <div class="col-md-3">
-
-                        <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
-                            <h6 class="title mb-3">Детские площадки</h6>
-                            <p>Пластик – безопасный и достойный вариант. </p>
-                            <p>✔ никаких заноз, повреждений и острых углов</p>
-                            <p>✔ современность</p>
-                            <p>✔ яркость</p>
-                            <p>✔ несложная сборная конструкция</p>
-                            <button class="btn btn-outline-primary btn-sm">Learn More</button>
-                        </div>
-
-
-
-                    <br>
-                    <br>
-
-                            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                                <h6 class="title mb-3">Спортивные площадки, оборудование для воркаут, уличные тренажёры</h6>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">Детские площадки</h6>
+                    <p>Пластик – безопасный и достойный вариант. </p>
+                    <p>✔ никаких заноз, повреждений и острых углов</p>
+                    <p>✔ современность</p>
+                    <p>✔ яркость</p>
+                    <p>✔ несложная сборная конструкция</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                </div>
+            </div>
+            <!-- End of Row -->
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+    Accordion Item #2
+    </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+    <div class="container">
+            <!-- row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                            <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">Спортивные площадки, оборудование для воркаут, уличные тренажёры</h6>
                                 <p>- ВОЗМОЖНОСТЬ СТРОИТЬ ЦЕЛЫЙ ГОРОД-КОМПЛЕКС
                                 <p>- СТОЙКАЯ ПОРОШКОВАЯ ОКРАСКА</p>
                                 <p>- ПОЛНЫЙ КОНТРОЛЬ ПРОИЗВОДСТВА</p>
@@ -147,47 +255,47 @@
                                 <p>- ВЫИГРЫШНЫЕ ЦЕНЫ, ТОВАР ОТ ПРОИЗВОДИТЕЛЯ - РЕГУЛИРОВКА ПЕРЕКЛАДИН ПО ВЫСОТЕ</p>
 
                                 <button class="btn btn-outline-primary btn-sm">Learn More</button>
-                            </div>
-                    <br>
-                    <br>
-                            <div id="collapseThree" class="collapse" data-bs-parent="#according">
-                                <h6 class="title mb-3">Водоналивные блоки(барьеры) из пластика</h6>
+                </div>
+            </div>
+            <!-- End of Row -->
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    Accordion Item #3
+    </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+    <div class="container">
+            <!-- row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                            <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">Водоналивные блоки(барьеры) из пластика</h6>
                                 <p> Разновидность дорожного ограждения для ограничения доступа к территории и направления потока автотранспорта. Представляет собой полую обтекаемую конструкцию, выполняется в контрастных красных и белых цветах. Изготавливается из полиэтилена методом ротационной формовки.
                                 В процессе эксплуатации наполняется водой, что повышает вес изделия и его устойчивость соответственно.
                                 </p>
             <!--                    <p class="text-muted"> Включает в себя выполнение различных упражнений на уличных спортплощадках, а именно на турниках, брусьях, шведских стенках, рукоходах и прочих конструкциях, или вообще без их использования (на земле). Основной акцент делается на работу с собственным весом и развитие силы и выносливости. Люди, увлекающиеся таким спортом, называют себя по-разному: воркаутеры, уличные (дворовые) спортсмены или атлеты, уличные гимнасты, турникмены и т.д.</p>-->
-                                <button class="btn btn-outline-primary btn-sm">Learn More</button>
-
-                            </div>
-
+<!--                                <button class="btn btn-outline-primary btn-sm">Learn More</button>-->
                 </div>
-                <div class="col-md-5">
-                    <div class="img-wrapper">
-
-
-                            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
-                                <div class="after right"></div>
-                                <img src="{% static '/imgs/game2.jpg' %}" class="w-100" alt="About Us">
-                            </div>
-                        <br>
-                        <br>
-                            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                                <div class="after right"></div>
-                                <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">
-                            </div>
-                        <br>
-                        <br>
-                            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-                                <div class="after right"></div>
-                                <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">
-                            </div>
-
-                    </div>
-                </div>
-            </div><!-- End of Row -->
-        </div><!-- End of Container-->
+            </div>
+            <!-- End of Row -->
         </div>
-    </section><!-- End of Section -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
 <!--    </div>-->
 <!--    <div class="carousel-item">-->
 
@@ -317,7 +425,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                      <iframe width="100%" height="450px" class="border-0"
-                    src="https://blandgroup.kg/wp-content/uploads/2020/09/blandgroup_120243477_788073878624770_4211538146444678255_n.mp4?_=2">
+<!--                    src="https://blandgroup.kg/wp-content/uploads/2020/09/blandgroup_120243477_788073878624770_4211538146444678255_n.mp4?_=2">-->
                     </iframe>
                 </div>
             </div>

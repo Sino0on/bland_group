@@ -58,7 +58,7 @@
                                 </a>
                               </nav>
 
-                              <div class="col-5">
+                              <div class="col-5 dastan-mb-hidden">
                                 {% for i in subcategories %}
 
                                   <a class="dropdown-item" href="{% url 'product_list' %}?subcategory={{ i.id }}">{{ i.title }}</a>
