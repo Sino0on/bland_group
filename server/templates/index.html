@@ -200,7 +200,7 @@
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-    Accordion Item #1
+    Детские площадки
     </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -221,7 +221,7 @@
                     <p>✔ современность</p>
                     <p>✔ яркость</p>
                     <p>✔ несложная сборная конструкция</p>
-                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                    <a href="{% url 'product_list' %}?category=1" class="btn btn-outline-primary btn-sm">Подробнее</a>
                 </div>
             </div>
             <!-- End of Row -->
@@ -232,7 +232,7 @@
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-    Accordion Item #2
+    Спортивные площадки, Воркауты
     </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -254,7 +254,7 @@
                                 <p>- НИЗКАЯ СТОИМОСТЬ ДОСТАВКИ</p>
                                 <p>- ВЫИГРЫШНЫЕ ЦЕНЫ, ТОВАР ОТ ПРОИЗВОДИТЕЛЯ - РЕГУЛИРОВКА ПЕРЕКЛАДИН ПО ВЫСОТЕ</p>
 
-                                <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                                <a href="{% url 'product_list' %}?category=2" class="btn btn-outline-primary btn-sm">Подробнее</a>
                 </div>
             </div>
             <!-- End of Row -->
@@ -265,7 +265,7 @@
     <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-    Accordion Item #3
+    Водоналивные блоки
     </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -276,7 +276,7 @@
                 <div class="col-md-6">
                     <div class="img-wrapper">
                         <div class="after"></div>
-                            <img src="{% static '/imgs/vorkaut.jpg' %}" class="w-100" alt="About Us">
+                            <img src="{% static '/imgs/vodo.jpg' %}" class="w-100" alt="About Us">
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -284,6 +284,7 @@
                                 <p> Разновидность дорожного ограждения для ограничения доступа к территории и направления потока автотранспорта. Представляет собой полую обтекаемую конструкцию, выполняется в контрастных красных и белых цветах. Изготавливается из полиэтилена методом ротационной формовки.
                                 В процессе эксплуатации наполняется водой, что повышает вес изделия и его устойчивость соответственно.
                                 </p>
+                    <a href="{% url 'product_list' %}?category=3"  class="btn btn-outline-primary btn-sm">Подробнее</a>
             <!--                    <p class="text-muted"> Включает в себя выполнение различных упражнений на уличных спортплощадках, а именно на турниках, брусьях, шведских стенках, рукоходах и прочих конструкциях, или вообще без их использования (на земле). Основной акцент делается на работу с собственным весом и развитие силы и выносливости. Люди, увлекающиеся таким спортом, называют себя по-разному: воркаутеры, уличные (дворовые) спортсмены или атлеты, уличные гимнасты, турникмены и т.д.</p>-->
 <!--                                <button class="btn btn-outline-primary btn-sm">Learn More</button>-->
                 </div>

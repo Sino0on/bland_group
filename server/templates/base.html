@@ -187,23 +187,32 @@
                                 </li>
                                 <li class="list-body">
                                     <div class="row">
+<!--                                        <div class="col">-->
+<!--                                            {% if user.is_superuser %}-->
+<!--                                            <a href="{% url 'orders' %}">Заказы</a>-->
+<!--                                            <a href="{% url 'product_create' %}">Создать продукт</a>-->
+<!--                                            <a href="#">Создать новость</a>-->
+<!--                                            {% else %}-->
+<!--                                            <a href="#">Link 1</a>-->
+<!--                                            <a href="#">Link 2</a>-->
+<!--                                            <a href="#">Link 3</a>-->
+<!--                                            {% endif %}-->
+<!--                                            <a href="test">TEST</a>-->
+<!--                                        </div>-->
+                                        {% for i in categories %}
                                         <div class="col">
-                                            {% if user.is_superuser %}
-                                            <a href="{% url 'orders' %}">Заказы</a>
-                                            <a href="{% url 'product_create' %}">Создать продукт</a>
-                                            <a href="#">Создать новость</a>
-                                            {% else %}
-                                            <a href="#">Link 1</a>
-                                            <a href="#">Link 2</a>
-                                            <a href="#">Link 3</a>
-                                            {% endif %}
-                                            <a href="test">TEST</a>
-                                        </div>
-                                        <div class="col">
-                                            {% for i in categories %}
+
                                             <a href="{% url 'product_list' %}?category={{ i.id }}">{{ i.title }}</a>
-                                            {% endfor %}
+
                                         </div>
+                                        {% if categories.id >= 2 %}
+                                        <div class="col">
+
+                                            <a href="{% url 'product_list' %}?category={{ i.id }}">{{ i.title }}</a>
+
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
                                     </div>
                                 </li>
                             </ul>
