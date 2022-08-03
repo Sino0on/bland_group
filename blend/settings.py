@@ -84,10 +84,31 @@ TEMPLATED_DOCS_LIBREOFFICE_PATH = '/usr/share/libreoffice/program'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'blandgroup_',
+#         'USER': 'newblandgroup',
+#         'PASSWORD': 'dakwi3-kohwiz-dybRar',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u1750434_default',
+        'USER': 'u1750434_default',
+        'PASSWORD': 'dB6yd6I8fwENeTK0',
+        'HOST': 'localhost',
     }
 }
 
