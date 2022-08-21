@@ -84,12 +84,12 @@ TEMPLATED_DOCS_LIBREOFFICE_PATH = '/usr/share/libreoffice/program'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -102,15 +102,15 @@ TEMPLATED_DOCS_LIBREOFFICE_PATH = '/usr/share/libreoffice/program'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u1750434_default',
-        'USER': 'u1750434_default',
-        'PASSWORD': 'dB6yd6I8fwENeTK0',
-        'HOST': 'localhost',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'u1750434_default',
+#         'USER': 'u1750434_default',
+#         'PASSWORD': 'dB6yd6I8fwENeTK0',
+#         'HOST': 'localhost',
+#     }
+# }
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 
