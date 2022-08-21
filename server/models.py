@@ -30,7 +30,7 @@ class Subcategory(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    gLTF = models.FileField(upload_to='files/')
+    gLTF = models.FileField(upload_to='files/', blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
     height = models.CharField(max_length=100)
     width = models.CharField(max_length=100)
@@ -39,7 +39,7 @@ class Product(models.Model):
     material = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, blank=True, null=True)
-    price = models.IntegerField()
+    price = models.IntegerField(blank=True, null=True)
     age_limit = models.IntegerField()
     image = models.ImageField(upload_to='images/product')
 
@@ -47,7 +47,7 @@ class Product(models.Model):
         return f'{self.title}'
 
     class Meta:
-        ordering = ['-date']
+
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
 
